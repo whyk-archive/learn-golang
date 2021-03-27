@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "learn-golang",
+  "builds": [
+    { "src": "*.go", "use": "@vercel/go" }
+  ]
+}
