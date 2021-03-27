@@ -34,7 +34,7 @@ func TodoShow(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	fmt.Fprintf(w, "Todo show: %s", ps.ByName("todoId"))
 }
 
-func main() {
+func Handler() {
 	router := httprouter.New()
 	router.GET("/", Index)
 	router.GET("/todos", TodoIndex)
