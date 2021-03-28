@@ -17,8 +17,21 @@ go mod init
 
 ちなみに、何度も依存関係を解決していると不要なパッケージも溜まるため、`go mod tidy`で削除する。
 
+### Golangのホスティング
+`vercel`を利用。vercelは`api/index.go`をエントリーポイントとして展開する。  
+そのため、通常の`go run <file name>`ではなく`vercel dev`で動作し、`http://localhost:3000/api`でアクセスできる。  
+（ただ、今回はAPIしかないので、`vercel.json`で設定変更をして`http://localhost:3000`でアクセスできるようにしている）
+
+#### `vercel.json`
+- rewrites：URLを書き換えたい場合は利用する
+- cleanUrls：URL末尾の拡張子を外したい場合に利用する
+- trailingSlash：falseの場合、末尾に`/`を入れると、末尾にそれがないURLにリダイレクトする
+- regions：東京リージョンを利用する場合は`hnd1`
+
 ## Goal
 JSON APIサーバー
 
 ## Reference
 - [GoでJSON APIを書く](http://sgykfjsm.github.io/blog/2016/03/13/golang-json-api-tutorial/)
+- [Official Runtimes - Vercel](https://vercel.com/docs/runtimes#official-runtimes/go)
+- [Configuration Reference - Vercel](https://vercel.com/docs/configuration)
