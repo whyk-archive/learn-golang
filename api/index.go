@@ -1,44 +1,10 @@
 package handler
 
 import (
-	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
-	"time"
-
-	"github.com/julienschmidt/httprouter"
 )
 
-type Todo struct {
-	Name     string    `json:"name"`
-	Computed bool      `json:"computed"`
-	Due      time.Time `json:"due"`
-}
-
-type Todos []Todo
-
-func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	fmt.Fprintf(w, "Welcome!!")
-}
-
-func TodoIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	todos := Todos{
-		Todo{Name: "Write presentation"},
-		Todo{Name: "Host meetup"},
-	}
-	json.NewEncoder(w).Encode(todos)
-}
-
-func TodoShow(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	fmt.Fprintf(w, "Todo show: %s", ps.ByName("todoId"))
-}
-
-func Handler() {
-	router := httprouter.New()
-	router.GET("/", Index)
-	router.GET("/todos", TodoIndex)
-	router.GET("/todos/:todoId", TodoShow)
-
-	log.Fatal(http.ListenAndServe(":8080", router))
+func Handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "<h1>Hello from Go!</h1>")
 }
