@@ -1,6 +1,6 @@
 {
-  "rewrites": [
-    {"source": "/", "destination": "/api/index.go"}
+  "routes": [
+    {"src": "/:match*", "dest": "/api/:match*"}
   ],
   "cleanUrls": true,
   "trailingSlash": false,
