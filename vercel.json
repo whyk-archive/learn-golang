@@ -2,6 +2,5 @@
   "rewrites": [
     {"source": "/:match*", "destination": "/api/:match*"}
   ],
-  "trailingSlash": false,
   "regions": ["hnd1"]
 }
