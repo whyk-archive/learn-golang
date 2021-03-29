@@ -1,8 +1,7 @@
 {
-  "routes": [
-    {"src": "/:match*", "dest": "/api/:match*"}
+  "rewrites": [
+    {"source": "/:match*", "destination": "/api/:match*"}
   ],
-  "cleanUrls": true,
   "trailingSlash": false,
   "regions": ["hnd1"]
 }
