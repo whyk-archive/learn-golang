@@ -24,7 +24,7 @@ go mod init
 
 #### `vercel.json`
 - rewrites：URLを書き換えたい場合は利用する
-  - `cleanUrl: true`と`{ "source": "/:match*", "destination": "/api/:match*" }`を併用すると、`vercel dev`では動作しても本番環境で動作しない
+  - `cleanUrls: true`と`{ "source": "/:match*", "destination": "/api/:match*" }`を併用すると、`vercel dev`では動作しても本番環境で動作しない
 - cleanUrls：URL末尾の拡張子を外したい場合に利用する
 - trailingSlash：falseの場合、末尾に`/`を入れると、末尾にそれがないURLにリダイレクトする
 - regions：東京リージョンを利用する場合は`hnd1`
