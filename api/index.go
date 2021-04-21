@@ -27,10 +27,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	// authorization := r.Header.Get("API_KEY")
-	// if authorization == "" || authorization != conf.APIKey {
-	// 	return
-	// }
+	authorization := r.Header.Get("API_KEY")
+	if authorization == "" || authorization != conf.APIKey {
+		return
+	}
 
 	todos := Todos{
 		Todo{Name: "Write presentation"},
