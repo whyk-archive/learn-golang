@@ -29,6 +29,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 	authorization := r.Header.Get("API_KEY")
 	if authorization == "" || authorization != conf.APIKey {
+		w.WriteHeader(401)
 		return
 	}
 
